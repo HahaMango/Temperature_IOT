@@ -1,0 +1,30 @@
+#selectForm{
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 300px;
+    color: white;
+}
+
+#selectForm input{
+    width: 30px;
+    display: inline;
+    background-color: rgb(80, 80, 80);
+    border-color: transparent;
+    border-radius: 5px;
+    color:white;
+}
+
+#two{
+    margin-top: 10px;
+}
+
+#two select{
+    background-color: rgb(80, 80, 80);
+    color: rgb(173, 173, 173);
+    border-color: transparent;
+    border-radius: 5px;
+}
+
+#selectForm label{
+    color:  rgb(173, 173, 173);
+}

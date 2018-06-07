@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp</title>
+    <link rel="stylesheet" href="css/mstyle.css">
+    <link rel="stylesheet" href="CSS/formcss.css">
+</head>
+
+<body>
+    <div id="background">
+        <div>
+            <div id="top_left">
+                <form id="selectForm" action="">
+                    <div id="one">
+                        <label class="title">start:</label>
+                        <input name="year">
+                        <label>年</label>
+                        <input name="month">
+                        <label>月</label>
+                        <input name="day">
+                        <label>日</label>
+                    </div>
+                    <div id="two">
+                        <label class="title">显示天数:</label>
+                        <!--<input name="shownumber">-->
+                        <select name="daynumber">
+                            <option value="1">1天</option>
+                            <option value="7">7天</option>
+                            <option value="15">15天</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div id="topdiv">
+                <a href="javascript:void(0);" id="cnt">
+                    <canvas id="titlecanvas" height="80" width="400">
+                        <img />
+                    </canvas>  
+                    <img id="title_img" src="CSS/title.png">                  
+                </a>
+            </div>
+            <div id="top_right"></div>
+        </div>
+        <div id="middel">
+            <div id="inner">
+                <canvas id="tp_draw" height="685" width="970">
+                    <p>请更换支持H5的浏览器</p>
+                </canvas>
+            </div>
+        </div>
+        <div id="blow">
+
+        </div>
+    </div>
+    <script src="JS/jquery-3.2.0.min.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="JS/connection.js"></script>
+    <script src="JS/show.js"></script>
+</body>
+
+</html>
