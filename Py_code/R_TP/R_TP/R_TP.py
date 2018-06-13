@@ -18,30 +18,29 @@ def sendTp():
     #转换单位为摄氏度
     temperature = temperature / 1000
     #打印值
-    print(temperature)
 
     #构造http请求
-    params = urllib.parse.urlencode({'temp':'4','tp': 17.5, 'local': 'china'})
+    params = urllib.parse.urlencode({'tp': temperature, 'local': 'china'})
     print(params)
     headers = {"Content-type": "application/x-www-form-urlencoded",
            "Accept": "text/plain"}
     sendData = HC.HTTPConnection("localhost",port=8080)
     sendData.request("POST","/send",params,headers)
     r2 = sendData.getresponse()
-    print(r2.read())
+    #print(r2.read())
 
-def main_loop():
-    t1 = None
+def test():
+    print('test')
+
+t1 = None
+while True:
     if t1 is None:
-        sendTp()
+        test()
         t1 = DT.datetime.now()
-    if t1!=None:
+    else:
         t2 = DT.datetime.now()
         dt = t2-t1
         if dt.seconds>3600:      
             t1=DT.datetime.now()
-            sendTp()
+            test()
         time.sleep(2);
-
-while True:
-    main_loop()

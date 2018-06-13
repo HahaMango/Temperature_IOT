@@ -84,8 +84,8 @@ function drawTpData(left,center,offset,tpvalue,tplable) {
     DataContext.lineTo(left+offset,center-tp_offset);
     DataContext.moveTo(left+offset+5,center-tp_offset-5);
     DataContext.arc(left+offset,center-tp_offset-5,5,0,2*Math.PI,true);
-    DataContext.fillText(tpvalue,left+offset,center-tp_offset-30);
-    DataContext.fillText(tplable,left+offset,center+30);
+    DataContext.fillText(tpvalue,left+offset-10,center-tp_offset-30);
+    DataContext.fillText(tplable,left+offset-10,center+30);
 
     DataContext.stroke();
     DataContext.fill();

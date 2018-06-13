@@ -1,6 +1,9 @@
 var TPJson = 'sdfsdf';
 
 $("#cnt").click(function () {
+    $('#tp_draw').remove();
+    $('#inner').append('<canvas id="tp_draw" height="685" width="970"><p>请更换支持H5的浏览器</p></canvas>')
+    drawTpView(TOP, BLOW, LEFT, RIGHT, NUMBER, CENTER);
     var year = $("#one").children("input[name='year']");
     var month = $("#one").children("input[name='month']");
     var day = $("#one").children("input[name='day']");
@@ -16,8 +19,12 @@ $("#cnt").click(function () {
     //获取显示的日期数
     var number = $("#two").children("select[name='daynumber']");
     number=number.val();
-    if (year != '' && month != '' && day != '') {
-        $.getJSON("http://localhost:8080/jsoninterface", { start: startTime, daynumber: number }, function (json) {
+
+    if(number!=1){
+        alert('该功能未开发');
+    }
+    else if (year != '' && month != '' && day != '') {
+        $.getJSON("http://www.hahamango.cn/jsoninterface", { start: startTime, daynumber: number }, function (json) {
             TPJson = json;
             name();
         });
