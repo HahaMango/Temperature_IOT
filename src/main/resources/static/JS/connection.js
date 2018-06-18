@@ -1,4 +1,4 @@
-var TPJson = 'sdfsdf';
+var TPJson;
 
 $("#cnt").click(function () {
     $('#tp_draw').remove();
@@ -24,7 +24,7 @@ $("#cnt").click(function () {
         alert('该功能未开发');
     }
     else if (year != '' && month != '' && day != '') {
-        $.getJSON("http://www.hahamango.cn/jsoninterface", { start: startTime, daynumber: number }, function (json) {
+        $.getJSON("jsoninterface", { start: startTime, daynumber: number }, function (json) {
             TPJson = json;
             name();
         });

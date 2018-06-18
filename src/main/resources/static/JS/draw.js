@@ -75,6 +75,8 @@ function drawTpData(left,center,offset,tpvalue,tplable) {
     var DataCanvas = document.getElementById("tp_draw");
     var DataContext = DataCanvas.getContext("2d");
 
+    DataContext.font = "12px serif";
+
     DataContext.strokeStyle = "rgb(49,49,49)";
     DataContext.fillStyle = "#rgb(49,49,49)";
 
@@ -84,8 +86,8 @@ function drawTpData(left,center,offset,tpvalue,tplable) {
     DataContext.lineTo(left+offset,center-tp_offset);
     DataContext.moveTo(left+offset+5,center-tp_offset-5);
     DataContext.arc(left+offset,center-tp_offset-5,5,0,2*Math.PI,true);
-    DataContext.fillText(tpvalue,left+offset-10,center-tp_offset-30);
-    DataContext.fillText(tplable,left+offset-10,center+30);
+    DataContext.fillText(tpvalue+"℃",left+offset-8,center-tp_offset-30);
+    DataContext.fillText(tplable,left+offset-6,center+30);
 
     DataContext.stroke();
     DataContext.fill();
