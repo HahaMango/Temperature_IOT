@@ -21,10 +21,10 @@ def sendTp():
 
     #构造http请求
     params = urllib.parse.urlencode({'tp': temperature, 'local': 'china'})
-    print(params)
+    #print(params)
     headers = {"Content-type": "application/x-www-form-urlencoded",
            "Accept": "text/plain"}
-    sendData = HC.HTTPConnection("localhost",port=8080)
+    sendData = HC.HTTPConnection("119.29.173.151",port=80)
     sendData.request("POST","/send",params,headers)
     r2 = sendData.getresponse()
     #print(r2.read())
@@ -35,12 +35,18 @@ def test():
 t1 = None
 while True:
     if t1 is None:
-        test()
+        try:
+            sendTp()
+        except Exception as e:
+            print(e)
         t1 = DT.datetime.now()
     else:
         t2 = DT.datetime.now()
         dt = t2-t1
         if dt.seconds>3600:      
             t1=DT.datetime.now()
-            test()
+            try:
+                sendTp()
+            except Exception as e:
+                print(e)
         time.sleep(2);
